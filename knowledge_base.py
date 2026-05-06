@@ -23,7 +23,6 @@ def check_md5(md5_str: str):
             line = line.strip()     # 处理字符串前后的空格和回车
             if line == md5_str:
                 return True         # 已处理过
-
         return False
 
 
@@ -97,7 +96,3 @@ class KnowledgeBaseService(object):
         return "[成功]内容已经成功载入向量库"
 
 
-if __name__ == '__main__':
-    service = KnowledgeBaseService()
-    r = service.upload_by_str("周杰轮222", "testfile")
-    print(r)

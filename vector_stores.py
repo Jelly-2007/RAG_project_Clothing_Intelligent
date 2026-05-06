@@ -20,10 +20,3 @@ class VectorStoreService(object):
         return self.vector_store.as_retriever(search_kwargs={"k": config.similarity_threshold})
 
 
-if __name__ == '__main__':
-    from langchain_community.embeddings import DashScopeEmbeddings
-    retriever = VectorStoreService(DashScopeEmbeddings(model="config.embedding_model_name")).get_retriever()
-
-    res = retriever.invoke("我的体重180斤，尺码推荐")
-    print(res)
-
